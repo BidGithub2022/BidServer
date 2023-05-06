@@ -60,8 +60,18 @@ Created LXC container using Centos.
 
 <img width="1320" alt="Screen Shot 2023-04-30 at 4 02 05 PM" src="https://user-images.githubusercontent.com/113651761/235376115-d0f84229-4dab-4b35-bd85-1d6cfc004bd9.png">
 
+dnf update -y
+dnf upgrade -y
+curl -sSL https://install.pi-hole.net | bash
+pihole -a -p
+ 
 
 https://docs.pi-hole.net/guides/dns/unbound/
+
+wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
+
+Note:
+**Download the current root hints file (the list of primary root servers which are serving the domain "." - the root domain). Update it roughly every six months.**
 
 <img width="1325" alt="Screen Shot 2023-04-30 at 4 04 19 PM" src="https://user-images.githubusercontent.com/113651761/235376145-cfe33f17-7db0-4898-9ae1-889713afea12.png">
 
