@@ -114,9 +114,9 @@ Insights:
 - Register system to insights: insights-client --register
 
 - You can check the vulnerabilities and remediate via executing playbook on the system through cloud connector:
-https://access.redhat.com/articles/rhc 
+  https://access.redhat.com/articles/rhc 
 
-- https://access.redhat.com/articles/rhc-registration
+  https://access.redhat.com/articles/rhc-registration
 
 - You will need proper privilege for this which is "Remediations administrator": Go to https://console.redhat.com/iam/user-access/users and check the groups/roles. You can add the proper role if not already added to the user.
 
