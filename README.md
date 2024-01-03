@@ -100,12 +100,18 @@ Step #7: Automating provisioning:
 
 
 Step #8: Smart Management/ Satellite/ Insights to manage the instances:
+
 Register system to insights: insights-client --register
-You can check the vulnerabilities and remediate via executing playbook on the system through cloud connector: https://access.redhat.com/articles/rhc-registration. 
-You will need proper privilege for this "Remediations administrator": https://console.redhat.com/iam/user-access/users. You can add the proper role if not already added to the user.
+
+You can check the vulnerabilities and remediate via executing playbook on the system through cloud connector:
+https://access.redhat.com/articles/rhc 
+
+https://access.redhat.com/articles/rhc-registration
+
+You will need proper privilege for this which is "Remediations administrator": Go to https://console.redhat.com/iam/user-access/users and check the groups/roles. You can add the proper role if not already added to the user.
 
 
-
+![Screenshot 2024-01-03 at 1 56 05 PM](https://github.com/BidGithub2022/BidServer/assets/113651761/e9cc8e88-2821-4da5-80c8-237e10f92d10)
 
 
 
