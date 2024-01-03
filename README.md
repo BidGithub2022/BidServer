@@ -89,9 +89,18 @@ Step #5: OpenShift installation:
 
 
 
-Single Node Openshift
+Single Node Openshift:
+- Watch https://www.youtube.com/watch?v=A1jC_e5HcwA&t=15s&ab_channel=networknutsdotnet
 
-Three Master and two worker Openshift
+- Create the VM.
+
+- I am using PiHole for DNS and my home router for DHCP server. Changed the home router setting to use the PiHole as the primary DNS server. 
+
+- PiHole does not like the special chars like *. Hence added all the DNS records in PiHole.
+
+- Get 60 days free trial. Need to register and attach valid subscription to the cluster.
+
+Three Master and two worker Openshift:
 
 Step #6: AAP installation:
 
@@ -101,14 +110,15 @@ Step #7: Automating provisioning:
 
 Step #8: Smart Management/ Satellite/ Insights to manage the instances:
 
-Register system to insights: insights-client --register
+Insights:
+- Register system to insights: insights-client --register
 
-You can check the vulnerabilities and remediate via executing playbook on the system through cloud connector:
+- You can check the vulnerabilities and remediate via executing playbook on the system through cloud connector:
 https://access.redhat.com/articles/rhc 
 
-https://access.redhat.com/articles/rhc-registration
+- https://access.redhat.com/articles/rhc-registration
 
-You will need proper privilege for this which is "Remediations administrator": Go to https://console.redhat.com/iam/user-access/users and check the groups/roles. You can add the proper role if not already added to the user.
+- You will need proper privilege for this which is "Remediations administrator": Go to https://console.redhat.com/iam/user-access/users and check the groups/roles. You can add the proper role if not already added to the user.
 
 
 ![Screenshot 2024-01-03 at 1 56 05 PM](https://github.com/BidGithub2022/BidServer/assets/113651761/e9cc8e88-2821-4da5-80c8-237e10f92d10)
