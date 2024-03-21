@@ -96,7 +96,7 @@ Single Node Openshift:
 
 - I am using PiHole for DNS and my home router for DHCP server. Changed the home router setting to use the PiHole as the primary DNS server. 
 
-- PiHole does not like the special chars like *. Hence added all the DNS records in PiHole.
+- PiHole does not like the special chars like *. Hence updated the local /etc/hosts file with 7 entries to resolve host names.
 
 - Get 60 days free trial. Need to register and attach valid subscription to the cluster.
 
