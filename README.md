@@ -87,18 +87,101 @@ Step #5: OpenShift installation:
 ![Screen Shot 2022-09-20 at 6 02 58 PM](https://user-images.githubusercontent.com/113651761/191379791-a32b45ec-4ea6-46d2-b186-a0eb6fbc8e66.png)
 
 
-
-
 Single Node Openshift:
+
 - Watch https://www.youtube.com/watch?v=A1jC_e5HcwA&t=15s&ab_channel=networknutsdotnet
 
-- Create the VM.
+- Create the VM. Used Ansible to do that.
+
+   ** Ansible to provision VM:
+  
+   1. Install the necessary packages:
+      
+      dnf install ansible-core
+      
+      ansible --verson
+      
+      python3 --version
+      
+   2. mkdir ansible
+      
+   3. Create a test playbook to tes using ansible-playbook test.yml
+      
+  ![Screenshot 2024-08-31 at 9 59 52 PM](https://github.com/user-attachments/assets/462780b5-c11c-4fb8-b565-3488bb15f931)
+  
+   4. Here is the playbook to create VM:
+      
+   ![Screenshot 2024-08-31 at 11 04 11 PM](https://github.com/user-attachments/assets/eb2dce46-6858-45cc-8595-9cd7c7a2d2cd)
+
+
+    5. Test syntax:
+       
+       ansible-playbook --synatx-check proxmox-vm.yml
+       
+       pip install asnible-lint
+       
+       ansible-lint proxmox-vm.yml
+       
+    6. Make sure the community collection is installed:
+       
+       ansible-galaxy list
+       
+       ansible-galaxy collection install community.general:4.0.0
+       
+       ansible-galaxy collection list
+       
+   7. Make sure to istall proxmoxer which will talk to proxmox API:
+      
+      pip install proxmoxer
+      
+   8. Create the VM: ansible-playbook proxmox-vm.yml
+       
+  
+  Go to hybrid cloud console.
+![Screenshot 2024-08-31 at 9 36 30 PM](https://github.com/user-attachments/assets/a33302fd-779b-403e-9547-828b36299b86)
+
+  Choose x86 baremetal installation.
+![Screenshot 2024-08-31 at 9 36 42 PM](https://github.com/user-attachments/assets/57e1f869-bdaa-4884-9f72-a241eec7f8df)
+
+  We will use Assisted installer,
+![Screenshot 2024-08-31 at 9 38 11 PM](https://github.com/user-attachments/assets/3bf39fbf-84b7-4d4c-b30e-5c2691d052e3)
+
+  Fill in domain and subdomain info.
+![Screenshot 2024-08-31 at 9 38 26 PM](https://github.com/user-attachments/assets/30fdf350-87cb-436f-aee6-49e53811880d)
+
+  You can choose to install the operator.
+![Screenshot 2024-08-31 at 9 38 41 PM](https://github.com/user-attachments/assets/9ee75c1b-7cfa-40a7-9305-a09ada1a3f59)
+
+  Add host , use a RHEL VM to ssh into the SNO VM. I had a RHEL VM already created. Used the public key here.
+![Screenshot 2024-08-31 at 9 38 56 PM](https://github.com/user-attachments/assets/23e4bc8a-dfe3-4f05-b202-2bf41f098bc0)
+
+![Screenshot 2024-08-31 at 9 39 21 PM](https://github.com/user-attachments/assets/7232e165-55e9-46e3-acb8-ce57236cee34)
+
+ Generate discovery iso.
+![Screenshot 2024-08-31 at 9 39 32 PM](https://github.com/user-attachments/assets/3b1f9ce9-2e72-4b11-bc1d-49494864c24c)
+
+ Reboot the SNO VM with the iso. Once rebooted , the host will be discovered.
+ 
+ ![Screenshot 2024-08-31 at 10 57 23 PM](https://github.com/user-attachments/assets/900a63c7-37b3-4143-bccb-520f4816d116)
+
+ Make necessary changes , review and install cluster.
+
+ ![Screenshot 2024-08-31 at 10 58 18 PM](https://github.com/user-attachments/assets/e58d3628-38e0-47b3-ad59-bc410f810848)
+
+ ![Screenshot 2024-08-31 at 10 59 57 PM](https://github.com/user-attachments/assets/288d176a-854a-454a-bf50-23d8a64482ec)
+
+ ![Screenshot 2024-08-31 at 11 00 25 PM](https://github.com/user-attachments/assets/37b60e4b-319f-484a-a66f-eb637078aa5b)
+
+ It might take 1-2 hour depending upon your network speed.
+
+ ![Screenshot 2024-08-31 at 11 02 58 PM](https://github.com/user-attachments/assets/bd0444d5-50fd-4574-ba1c-8fe80bc74d91)
+ 
 
 - I am using PiHole for DNS and my home router for DHCP server. Changed the home router setting to use the PiHole as the primary DNS server. 
 
 - PiHole does not like the special chars like *. Hence updated the local /etc/hosts file with 7 entries to resolve host names.
 
-- Get 60 days free trial. Need to register and attach valid subscription to the cluster.
+- You can use 60 days free trial or attach your subs. Need to register and attach valid subscription to the cluster.
 
 Three Master and two worker Openshift:
 
