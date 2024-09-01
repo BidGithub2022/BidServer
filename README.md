@@ -175,7 +175,20 @@ Single Node Openshift:
  It might take 1-2 hour depending upon your network speed.
 
  ![Screenshot 2024-08-31 at 11 02 58 PM](https://github.com/user-attachments/assets/bd0444d5-50fd-4574-ba1c-8fe80bc74d91)
- 
+
+ ![Screenshot 2024-08-31 at 11 38 12 PM](https://github.com/user-attachments/assets/8c06c0b6-8bf5-4416-917f-211303109a61)
+
+ ![Screenshot 2024-08-31 at 11 38 22 PM](https://github.com/user-attachments/assets/c941d7aa-44c0-48b4-8eca-d6cfe487246a)
+
+ ![Screenshot 2024-08-31 at 11 38 29 PM](https://github.com/user-attachments/assets/c93dcb04-6357-4557-a841-725c46f826a0)
+
+ Download the kubeconfig and save it. Save the kubeadmin password.
+
+  Need to make the DNS entries, follow below options:
+  ![Screenshot 2024-09-01 at 12 02 51 AM](https://github.com/user-attachments/assets/a16b4d42-6b29-4097-9867-e2b7a3b243a6)
+
+  ![Screenshot 2024-09-01 at 12 03 02 AM](https://github.com/user-attachments/assets/fcc563f9-31be-4dc8-8e7e-5d3a6fb5e85b)
+
 
 - I am using PiHole for DNS and my home router for DHCP server. Changed the home router setting to use the PiHole as the primary DNS server. 
 
